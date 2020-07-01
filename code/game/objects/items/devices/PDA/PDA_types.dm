@@ -4,7 +4,7 @@
 	default_cartridge = /obj/item/cartridge/virus/clown
 	inserted_item = /obj/item/toy/crayon/rainbow
 	icon_state = "pda-clown"
-	desc = "A portable microcomputer by Thinktronic Systems, LTD. The surface is coated with polytetrafluoroethylene and banana drippings."
+	desc = "A portable microcomputer by Thinktronic Systems, LTD."
 	ttone = "honk"
 	var/slipvictims = list() //CIT CHANGE - makes clown PDAs track unique people slipped
 

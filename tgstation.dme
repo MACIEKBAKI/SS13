@@ -2250,6 +2250,8 @@
 #include "code\modules\modular_computers\computers\item\computer_ui.dm"
 #include "code\modules\modular_computers\computers\item\laptop.dm"
 #include "code\modules\modular_computers\computers\item\laptop_presets.dm"
+#include "code\modules\modular_computers\computers\item\pda.dm"
+#include "code\modules\modular_computers\computers\item\pda_presets.dm"
 #include "code\modules\modular_computers\computers\item\processor.dm"
 #include "code\modules\modular_computers\computers\item\tablet.dm"
 #include "code\modules\modular_computers\computers\item\tablet_presets.dm"

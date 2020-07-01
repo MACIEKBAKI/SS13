@@ -25,7 +25,7 @@ Clown
 	name = "Clown"
 	jobtype = /datum/job/clown
 
-	belt = /obj/item/pda/clown
+	belt = /obj/item/modular_computer/pda/preset/clown
 	uniform = /obj/item/clothing/under/rank/clown
 	shoes = /obj/item/clothing/shoes/clown_shoes
 	mask = /obj/item/clothing/mask/gas/clown_hat
@@ -90,7 +90,7 @@ Mime
 	name = "Mime"
 	jobtype = /datum/job/mime
 
-	belt = /obj/item/pda/mime
+	belt = /obj/item/modular_computer/pda/preset/mime
 	uniform = /obj/item/clothing/under/rank/mime
 	mask = /obj/item/clothing/mask/gas/mime
 	gloves = /obj/item/clothing/gloves/color/white
@@ -137,7 +137,7 @@ Curator
 	name = "Curator"
 	jobtype = /datum/job/curator
 
-	belt = /obj/item/pda/curator
+	belt = /obj/item/modular_computer/pda/preset/curator
 	uniform = /obj/item/clothing/under/rank/curator
 	l_hand = /obj/item/storage/bag/books
 	r_pocket = /obj/item/key/displaycase
@@ -184,7 +184,7 @@ Lawyer
 	name = "Lawyer"
 	jobtype = /datum/job/lawyer
 
-	belt = /obj/item/pda/lawyer
+	belt = /obj/item/modular_computer/pda/preset/lawyer
 	ears = /obj/item/radio/headset/headset_sec
 	uniform = /obj/item/clothing/under/lawyer/bluesuit
 	suit = /obj/item/clothing/suit/toggle/lawyer

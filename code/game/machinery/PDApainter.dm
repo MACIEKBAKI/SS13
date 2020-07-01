@@ -1,3 +1,5 @@
+// TOOLBELTSTATION RE-WORK: Now works on /obj/item/modular_computer/pda/preset/.
+// Basically, changed all /obj/item/modular_computer/pda/preset/ into /obj/item/modular_computer/pda/preset/
 /obj/machinery/pdapainter
 	name = "\improper PDA painter"
 	desc = "A PDA painting machine. To use, simply insert your PDA and choose the desired preset paint scheme."
@@ -5,7 +7,7 @@
 	icon_state = "pdapainter"
 	density = TRUE
 	max_integrity = 200
-	var/obj/item/pda/storedpda = null
+	var/obj/item/modular_computer/pda/preset/storedpda = null
 	var/list/colorlist = list()
 
 
@@ -29,20 +31,19 @@
 /obj/machinery/pdapainter/Initialize()
 	. = ..()
 	var/list/blocked = list(
-		/obj/item/pda/ai/pai,
-		/obj/item/pda/ai,
-		/obj/item/pda/heads,
-		/obj/item/pda/clear,
-		/obj/item/pda/syndicate,
-		/obj/item/pda/chameleon,
-		/obj/item/pda/chameleon/broken,
-		/obj/item/pda/lieutenant)
+		/obj/item/modular_computer/pda/preset/ai/pai,
+		/obj/item/modular_computer/pda/preset/ai,
+		/obj/item/modular_computer/pda/preset/heads,
+		/obj/item/modular_computer/pda/preset/clear)
+		//obj/item/modular_computer/pda/preset/syndicate,
+		//obj/item/modular_computer/pda/preset/chameleon,
+		//obj/item/modular_computer/pda/preset/chameleon/broken)
 
-	for(var/A in typesof(/obj/item/pda) - blocked)
-		var/obj/item/pda/P = A
+	for(var/A in typesof(/obj/item/modular_computer/pda/preset) - blocked)
+		var/obj/item/modular_computer/pda/preset/P = A
 		var/PDA_name = initial(P.name)
 		colorlist += PDA_name
-		colorlist[PDA_name] = list(initial(P.icon_state), initial(P.desc), initial(P.overlays_offsets), initial(P.overlays_icons))
+		colorlist[PDA_name] = list(initial(P.icon_state), initial(P.desc))//, initial(P.overlays_offsets), initial(P.overlays_icons))
 
 /obj/machinery/pdapainter/Destroy()
 	QDEL_NULL(storedpda)
@@ -67,7 +68,7 @@
 		power_change()
 		return
 
-	else if(istype(O, /obj/item/pda))
+	else if(istype(O, /obj/item/modular_computer/pda/preset))
 		if(storedpda)
 			to_chat(user, "<span class='warning'>There is already a PDA inside!</span>")
 			return
@@ -116,9 +117,9 @@
 	var/list/P = colorlist[choice]
 	storedpda.icon_state = P[1]
 	storedpda.desc = P[2]
-	storedpda.overlays_offsets = P[3]
-	storedpda.overlays_icons = P[4]
-	storedpda.set_new_overlays()
+	//storedpda.overlays_offsets = P[3]
+	//storedpda.overlays_icons = P[4]
+	//storedpda.set_new_overlays()
 	storedpda.update_icon()
 	ejectpda()
 
